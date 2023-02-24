@@ -48,8 +48,9 @@ To Change:
 
 ```
 sed  -i "s/config_dict = yaml.load(f)/config_dict = yaml.load(f, Loader=yaml.FullLoader)/g" /usr/local/lib/python3.8/dist-packages/kubernetes/config/kube_config.py
+sed  -i "s/config_dict=yaml.load(f)/config_dict=yaml.load(f, Loader=yaml.FullLoader)/g" /usr/local/lib/python3.8/dist-packages/kubernetes/config/kube_config.py
 
-sed -i "s/for doc in docs:/for doc in yaml.load_all(docs, Loader=yaml.FullLoader):/g" /usr/local/lib/python3.8/dist-packages/kubeshell/kubeshell.py
+sed -i "s/docs = yaml.load_all(fd)/docs = yaml.load_all(fd, Loader=yaml.FullLoader)/g" /usr/local/lib/python3.8/dist-packages/kubeshell/kubeshell.py
 ```
 
 ***Note: Change the location with yours.***
